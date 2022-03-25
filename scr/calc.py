@@ -1,32 +1,46 @@
-'#<<<<<<< HEAD'
+'<<<<<<< HEAD'
 
 
 def get_fractions(valor):
+
     """
-    Descripción: Esta fucnión recibe un "valor" en forma de 
-    fracción el cual convierte a decimal 
+
+    Args:
+      valor: recive un valor numérico (acepta fracciones) 
+
+    Returns: regresa los valores en valores tipo flotante
+
     """
-    if("/" in valor):
-        decimal = int(valor[0:1]) / int(valor[2:3])
-        return decimal
-    else:
-        return float(valor)
+    numero = 0
+    try:
+        if(isinstance(valor,str)):
+            print(valor)
+            if "/" in valor :
+                arr = valor.split("/")
+                numerador = arr[0]
+                denominador = arr[1]
+                numero = float(numerador) / float(denominador)
+        else:
+            numero = float(entrada)
+            print(type(numero))
+      
+         if(isinstance(entrada,int) or  isinstance(entrada,float)):
+             numero = entrada
+    except:
+        print("Error de formato de numero")
+    return numero
 
 
 def suma(a, b):
     """
-    Descripción: Esta fucnión recibe dos valores los cuales pueden ser fracciones,
-    dichos valores serán sumados 
 
-    Parametrers:
-        a - es el primer sumando
-        b - es el segundo sumando 
+    Args:
+      a: representa el primer sumando
+      b: represenra el segundo sumando
 
-    Returns
-        Regresa la suma del primer sumando más el segundo sumando
+    Returns: regresa la suma del primer sumando y el segundo sumando
+
     """
-
-
     sumandoa = get_fractions(a)
     sumandob = get_fractions(b)
     return sumandoa + sumandob
@@ -37,23 +51,17 @@ def suma(a, b):
 
 def multiplica(a, b):
     """
-    Descripción: Esta fucnión recibe dos valores los cuales pueden ser valores en fracciones,
-    dichos valores serán multiplicados
 
-    Parametrers:
-        a - es el multiplicando
-        b - es el multiplicador 
+    Args:
+      a: representa el multiplicando
+      b: representa el multiplicador
 
-    Returns
-        Regresa la multiplicación del multiplicando y el multiplicador
+    Returns: regresa la multiplicación del muntiplicando por el multiplicador
+
     """
-
-
     multiplicando = get_fractions(a)
     multiplicador = get_fractions(b)
     return multiplicando * multiplicador
 
 
-'#>>>>>>> mult
-
-pip install pyment
+'#>>>>>>> mult'
